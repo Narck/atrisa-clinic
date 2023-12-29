@@ -1,0 +1,123 @@
+$color-primary-light-90: #ebf3f5;
+$color-primary-light-80: #d7e7ea;
+$color-primary-light-70: #c3dae0;
+$color-primary-light-60: #afced5;
+$color-primary-light-50: #9bc2cb;
+$color-primary-light-40: #86b6c0;
+$color-primary-light-30: #72aab6;
+$color-primary-light-20: #5e9dab;
+$color-primary-light-10: #4a91a1;
+$color-primary: #368596;
+$color-primary-dark-10: #317887;
+$color-primary-dark-20: #2b6a78;
+$color-primary-dark-30: #265d69;
+$color-primary-dark-40: #20505a;
+$color-primary-dark-50: #1b434b;
+$color-primary-dark-60: #16353c;
+$color-primary-dark-70: #10282d;
+$color-primary-dark-80: #0b1b1e;
+$color-primary-dark-90: #050d0f;
+
+$color-secondary-light-90: #f6fdff;
+$color-secondary-light-80: #edfcff;
+$color-secondary-light-70: #e3faff;
+$color-secondary-light-60: #daf8ff;
+$color-secondary-light-50: #d1f7ff;
+$color-secondary-light-40: #c8f5ff;
+$color-secondary-light-30: #bff3ff;
+$color-secondary-light-20: #b5f1ff;
+$color-secondary-light-10: #acf0ff;
+$color-secondary: #a3eeff;
+$color-secondary-dark-10: #93d6e6;
+$color-secondary-dark-20: #82becc;
+$color-secondary-dark-30: #72a7b3;
+$color-secondary-dark-40: #628f99;
+$color-secondary-dark-50: #527780;
+$color-secondary-dark-60: #415f66;
+$color-secondary-dark-70: #31474c;
+$color-secondary-dark-80: #213033;
+$color-secondary-dark-90: #101819;
+
+$color-accent-light-90: #fdecf0;
+$color-accent-light-80: #fbd8e1;
+$color-accent-light-70: #f8c5d2;
+$color-accent-light-60: #f6b2c3;
+$color-accent-light-50: #f49fb5;
+$color-accent-light-40: #f28ba6;
+$color-accent-light-30: #f07897;
+$color-accent-light-20: #ed6588;
+$color-accent-light-10: #eb5179;
+$color-accent: #e93e6a;
+$color-accent-dark-10: #d2385f;
+$color-accent-dark-20: #ba3255;
+$color-accent-dark-30: #a32b4a;
+$color-accent-dark-40: #8c2540;
+$color-accent-dark-50: #751f35;
+$color-accent-dark-60: #5d192a;
+$color-accent-dark-70: #461320;
+$color-accent-dark-80: #2f0c15;
+$color-accent-dark-90: #17060b;
+
+$color-white: #fff;
+$color-gray-10: #f8f9fa;
+$color-gray-20: #f1f3f5;
+$color-gray-30: #e9ecef;
+$color-gray-40: #dee2e6;
+$color-gray-50: #ced4da;
+$color-gray-60: #adb5bd;
+$color-gray-70: #868e96;
+$color-gray-80: #495057;
+$color-gray-90: #343a40;
+$color-gray-90: #212529;
+
+*:focus {
+  display: none;
+}
+
+*:focus-visible {
+  outline: 4px solid rgba($color-accent, .7);
+  outline-offset: 1px;
+  border-radius: 5px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background: $color-accent;
+  color: $color-white;
+  transition: all .5s ease;
+}
+::-moz-selection {
+  background: $color-accent;
+  color: $color-white;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "IRANSansX", Tahoma, sans-serif;
+  font-weight: normal;
+  line-height: 2;
+  //direction: rtl;
+  color: $color-primary-dark-80;
+  height: 100vh;
+  position: relative;
+}
+
+.margin-right-md {
+  margin-right: 3.2rem !important;
+}
+
+.margin-right-sm {
+  margin-right: 1.6rem !important;
+}
