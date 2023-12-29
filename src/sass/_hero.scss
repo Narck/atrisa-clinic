@@ -1,2 +1,26 @@
 @use "base";
 @use "grid";
+
+.hero {
+  height: 100%;
+  grid-template-rows: 1fr 1fr;
+  &__img-box {
+    background: url("../../src/img/cosmetologist-using-syringe-correct-female-face (1).jpg")
+      no-repeat center center / cover;
+    grid-column: center-start / center-end;
+    height: 100%;
+  }
+
+  &__text-box {
+    grid-column: center-start / center-end;
+    padding: 2.4rem 0;
+    height: 100%;
+    text-align: center;
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    color: base.$color-gray-70;
+    margin-bottom: 1.8rem;
+  }
+}

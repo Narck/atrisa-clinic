@@ -1,42 +1,61 @@
-$color-primary-light-90: #ebf3f5;
-$color-primary-light-80: #d7e7ea;
-$color-primary-light-70: #c3dae0;
-$color-primary-light-60: #afced5;
-$color-primary-light-50: #9bc2cb;
-$color-primary-light-40: #86b6c0;
-$color-primary-light-30: #72aab6;
-$color-primary-light-20: #5e9dab;
-$color-primary-light-10: #4a91a1;
-$color-primary: #368596;
-$color-primary-dark-10: #317887;
-$color-primary-dark-20: #2b6a78;
-$color-primary-dark-30: #265d69;
-$color-primary-dark-40: #20505a;
-$color-primary-dark-50: #1b434b;
-$color-primary-dark-60: #16353c;
-$color-primary-dark-70: #10282d;
-$color-primary-dark-80: #0b1b1e;
-$color-primary-dark-90: #050d0f;
+//$color-primary-light-90: #ebf3f5;
+//$color-primary-light-80: #d7e7ea;
+//$color-primary-light-70: #c3dae0;
+//$color-primary-light-60: #afced5;
+//$color-primary-light-50: #9bc2cb;
+//$color-primary-light-40: #86b6c0;
+//$color-primary-light-30: #72aab6;
+//$color-primary-light-20: #5e9dab;
+//$color-primary-light-10: #4a91a1;
+//$color-primary: #368596;
+//$color-primary-dark-10: #317887;
+//$color-primary-dark-20: #2b6a78;
+//$color-primary-dark-30: #265d69;
+//$color-primary-dark-40: #20505a;
+//$color-primary-dark-50: #1b434b;
+//$color-primary-dark-60: #16353c;
+//$color-primary-dark-70: #10282d;
+//$color-primary-dark-80: #0b1b1e;
+//$color-primary-dark-90: #050d0f;
+$color-primary-light-90: #e6f6fa;
+$color-primary-light-80: #ccecf4;
+$color-primary-light-70: #b3e3ef;
+$color-primary-light-60: #99d9e9;
+$color-primary-light-50: #80d0e4;
+$color-primary-light-40: #66c7df;
+$color-primary-light-30: #4dbdd9;
+$color-primary-light-20: #33b4d4;
+$color-primary-light-10: #1aaace;
+$color-primary: #00a1c9;
+$color-primary-dark-10: #0091b5;
+$color-primary-dark-20: #0081a1;
+$color-primary-dark-30: #00718d;
+$color-primary-dark-40: #006179;
+$color-primary-dark-50: #005165;
+$color-primary-dark-60: #004050;
+$color-primary-dark-70: #00303c;
+$color-primary-dark-80: #002028;
+$color-primary-dark-90: #001014;
 
-$color-secondary-light-90: #f6fdff;
-$color-secondary-light-80: #edfcff;
-$color-secondary-light-70: #e3faff;
-$color-secondary-light-60: #daf8ff;
-$color-secondary-light-50: #d1f7ff;
-$color-secondary-light-40: #c8f5ff;
-$color-secondary-light-30: #bff3ff;
-$color-secondary-light-20: #b5f1ff;
-$color-secondary-light-10: #acf0ff;
-$color-secondary: #a3eeff;
-$color-secondary-dark-10: #93d6e6;
-$color-secondary-dark-20: #82becc;
-$color-secondary-dark-30: #72a7b3;
-$color-secondary-dark-40: #628f99;
-$color-secondary-dark-50: #527780;
-$color-secondary-dark-60: #415f66;
-$color-secondary-dark-70: #31474c;
-$color-secondary-dark-80: #213033;
-$color-secondary-dark-90: #101819;
+$color-secondary-light-90: #e6fafc;
+$color-secondary-light-80: #ccf4f8;
+$color-secondary-light-70: #b3eff5;
+$color-secondary-light-60: #99eaf1;
+$color-secondary-light-50: #80e5ee;
+$color-secondary-light-40: #66dfeb;
+$color-secondary-light-30: #4ddae7;
+$color-secondary-light-20: #33d5e4;
+$color-secondary-light-10: #1acfe0;
+$color-secondary: #00cadd;
+$color-secondary-dark-10: #00b6c7;
+$color-secondary-dark-20: #00a2b1;
+$color-secondary-dark-30: #008d9b;
+$color-secondary-dark-40: #007985;
+$color-secondary-dark-50: #00656f;
+$color-secondary-dark-60: #005158;
+$color-secondary-dark-70: #003d42;
+$color-secondary-dark-80: #00282c;
+$color-secondary-dark-90: #001416;
 
 $color-accent-light-90: #fdecf0;
 $color-accent-light-80: #fbd8e1;
@@ -75,9 +94,9 @@ $color-gray-90: #212529;
 }
 
 *:focus-visible {
-  outline: 4px solid rgba($color-accent, .7);
-  outline-offset: 1px;
   border-radius: 5px;
+  outline: 4px solid rgba($color-accent, 0.7);
+  outline-offset: 1px;
 }
 
 *,
@@ -86,13 +105,15 @@ $color-gray-90: #212529;
   box-sizing: inherit;
   margin: 0;
   padding: 0;
+  //border: 1px solid green;
 }
 
 ::selection {
   background: $color-accent;
   color: $color-white;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
+
 ::-moz-selection {
   background: $color-accent;
   color: $color-white;
@@ -100,18 +121,18 @@ $color-gray-90: #212529;
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: 50%;
   overflow-x: hidden;
 }
 
 body {
+  color: $color-primary-dark-80;
   font-family: "IRANSansX", Tahoma, sans-serif;
   font-weight: normal;
-  line-height: 2;
-  //direction: rtl;
-  color: $color-primary-dark-80;
   height: 100vh;
+  line-height: 2;
   position: relative;
+  direction: rtl;
 }
 
 .margin-right-md {

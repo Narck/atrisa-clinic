@@ -1,1 +1,8 @@
 @use "base";
+
+.section__hero {
+  grid-column: full-start / full-end;
+  height: calc(100vh - 10rem);
+  transform: translateY(50%);
+
+}
