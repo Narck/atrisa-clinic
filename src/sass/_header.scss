@@ -2,95 +2,341 @@
 @use "grid";
 
 .header {
+  --height: 100%;
+  --opacity: 0;
+  --top: 0;
+  background-color: transparent;
+  --shadow-color: 0deg 0% 0%;
   grid-column: full-start / full-end;
-  height: 10rem;
+  height: var(--header-height);
+  --shadow-high: 0px 1px 1.2px hsl(var(--shadow-color) / 0.04),
+    0px 2.7px 3.3px -0.4px hsl(var(--shadow-color) / 0.05),
+    0px 5px 6.2px -0.9px hsl(var(--shadow-color) / 0.06),
+    0px 9.2px 11.4px -1.3px hsl(var(--shadow-color) / 0.06),
+    0px 17px 21px -1.7px hsl(var(--shadow-color) / 0.07);
+  --shadow-low: 0px 1px 1.2px hsl(var(--shadow-color) / 0.05),
+    0px 1.6px 2px -0.9px hsl(var(--shadow-color) / 0.06),
+    0px 3.4px 4.2px -1.7px hsl(var(--shadow-color) / 0.08);
+  position: fixed;
+  z-index: 10;
+  width: 100vw;
+
+  &.compact {
+    &::before {
+      box-shadow: var(--shadow-low);
+    }
+  }
+
+  &::before {
+    background-color: base.$color-white;
+    box-shadow: var(--shadow-high);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: var(--top);
+    transition: box-shadow 0.5s;
+    //transition: top .75s ease;
+    width: 100%;
+    z-index: -1;
+  }
 
   & .container {
     height: 100%;
   }
 
   &__nav-btn {
-    grid-column: full-start / center-start;
-    cursor: pointer;
-    border: none;
-    align-self: center;;
-    background: linear-gradient(to top, base.$color-primary 0%, base.$color-secondary 100%);
-    height: 10rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    overflow: hidden;
+    //align-self: center;
+    border: none;
+    //cursor: pointer;
+    display: flex;
+    grid-column: full-start / center-start;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    //-webkit-tap-highlight-color: rgba(
+    //  0,
+    //  0,
+    //  0,
+    //  0
+    //); /* prevent tap highlight color / shadow */
+    width: 100%;
+    z-index: 10;
+
+    &::before {
+      background: linear-gradient(
+        to top,
+        base.$color-secondary 0%,
+        base.$color-primary 100%
+      );
+      content: "";
+      height: var(--height);
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: opacity 0.75s ease, height 0.75s ease;
+      width: 100%;
+      z-index: -2;
+    }
+
+    &::after {
+      background: linear-gradient(
+        to top,
+        base.$color-primary 0%,
+        base.$color-secondary 100%
+      );
+      content: "";
+      height: var(--height);
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: opacity 0.75s ease, height 0.75s ease;
+      width: 100%;
+      z-index: -1;
+    }
+
+    &:not(.active) {
+      &::before,
+      &::after {
+        height: 100%;
+      }
+    }
+
+    &:hover,
+    &:active {
+      &::after {
+        opacity: 1;
+        //transition: opacity 0.5s ease;
+      }
+    }
   }
 
   &__call-btn {
+    -webkit-tap-highlight-color: transparent;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    fill: base.$color-white;
     grid-column: center-end / full-end;
-    background: linear-gradient(to bottom, base.$color-primary 0%, base.$color-secondary 100%);
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    z-index: 10;
 
+    &::before {
+      background: linear-gradient(
+        to top,
+        base.$color-primary 0%,
+        base.$color-secondary 100%
+      );
+      content: "";
+      height: var(--height);
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: opacity 0.75s ease, height 0.75s ease;
+      width: 100%;
+      z-index: -2;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    &::after {
+      background: linear-gradient(
+        to top,
+        base.$color-secondary 0%,
+        base.$color-primary 100%
+      );
+      content: "";
+      height: var(--height);
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: opacity 0.75s ease, height 0.75s ease;
+      width: 100%;
+      z-index: -1;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    &:not(.active) {
+      &::before,
+      &::after {
+        height: 100%;
+      }
+    }
+
+    &:hover,
+    &:active {
+      &::after {
+        opacity: 1;
+        //transition: opacity 0.5s ease;
+      }
+    }
   }
 
-  &__btn {
-    background-color: transparent;
-    border: none;
-
+  &__logo-box {
+    //height: calc(100% - 2rem);
   }
 
   &__picture {
-    grid-column: center-start / center-end;
-    height: 8rem;
-    justify-self: center;
     align-self: center;
+    backface-visibility: hidden;
+    display: block;
+    grid-column: center-start / center-end;
+    height: var(--header-height);
+    justify-self: center;
+    transform: translate3d(0, 0, 0);
   }
 
   &__logo {
+    backface-visibility: hidden;
+    display: block;
     height: 100%;
+    //height: 100%;
+    max-width: 100%;
+    padding: 0.5rem 0;
+    transform: translate3d(0, 0, 0);
+  }
+
+  &__svg {
+    cursor: pointer;
   }
 }
 
+//.ham {
+//  //border: 1px solid red;
+//
+//  cursor: pointer;
+//  height: 4rem;
+//  //-webkit-tap-highlight-color: transparent;
+//  transition: transform 400ms;
+//  //-moz-user-select: none;
+//  //-webkit-user-select: none;
+//  //user-select: none;
+//  width: 4rem;
+//}
+//
+//.hamRotate.active {
+//  transform: rotate(45deg);
+//}
+//
+//.hamRotate180.active {
+//  transform: rotate(180deg);
+//}
+//
+//.line {
+//  fill: none;
+//  stroke: #fff;
+//  stroke-linecap: square;
+//  stroke-width: 5.5;
+//  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+//}
+//
+//.ham8 .top {
+//  stroke-dasharray: 40 160;
+//}
+//
+//.ham8 .middle {
+//  stroke-dasharray: 40 142;
+//  transform-origin: 50%;
+//  transition: transform 400ms;
+//}
+//
+//.ham8 .bottom {
+//  stroke-dasharray: 40 85;
+//  transform-origin: 50%;
+//  transition: transform 400ms, stroke-dashoffset 400ms;
+//}
+//
+//.ham8.active .top {
+//  stroke-dashoffset: -64px;
+//}
+//
+//.ham8.active .middle {
+//  //stroke-dashoffset: -20px;
+//  transform: rotate(90deg);
+//}
+//
+//.ham8.active .bottom {
+//  stroke-dashoffset: -64px;
+//}
+
 .ham {
+  height: var(--header-height);
   -webkit-tap-highlight-color: transparent;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transition: transform 400ms;
   transition: transform 400ms;
   -moz-user-select: none;
+  -ms-user-select: none;
   -webkit-user-select: none;
   user-select: none;
-  width: 100%;
-  height: 10rem;
-  cursor: pointer;
-}
-.hamRotate.active {
-  transform: rotate(45deg);
-}
-.hamRotate180.active {
-  transform: rotate(180deg);
-}
-.line {
-  fill:none;
-  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-  stroke:#fff;
-  stroke-width:5.5;
-  stroke-linecap:round;
 }
 
+.active .ham-rotate {
+  //transform-origin: center;
+  //-webkit-transform-origin: center;
+  transform: rotate(45deg);
+}
+
+.line {
+  fill: none;
+  stroke: base.$color-white;
+  stroke-linecap: square;
+  stroke-width: 5.5;
+  -webkit-transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+}
+
+//.ham8 .top {
+//  stroke-dasharray: 40 160;
+//}
+//.ham8 .middle {
+//  stroke-dasharray: 40 142;
+//  transform-origin: 50%;
+//  -webkit-transform-origin: 50%;
+//  transition: transform 400ms;
+//}
+//.ham8 .bottom {
+//  stroke-dasharray: 40 85;
+//  transform-origin: 50%;
+//  -webkit-transform-origin: 50%;
+//  transition: transform 400ms, stroke-dashoffset 400ms;
+//}
+//.ham8.active .top {
+//  stroke-dashoffset: -64px;
+//}
+//.ham8.active .middle {
+//  //stroke-dashoffset: -20px;
+//  transform: rotate(90deg);
+//}
+//.ham8.active .bottom {
+//  stroke-dashoffset: -64px;
+//}
+
 .ham8 .top {
-  stroke-dasharray: 40 160;
+  stroke-dasharray: 40 121;
 }
-.ham8 .middle {
-  stroke-dasharray: 40 142;
-  transform-origin: 50%;
-  transition: transform 400ms;
-}
+
 .ham8 .bottom {
-  stroke-dasharray: 40 85;
-  transform-origin: 50%;
-  transition: transform 400ms, stroke-dashoffset 400ms;
+  stroke-dasharray: 40 121;
 }
-.ham8.active .top {
-  stroke-dashoffset: -64px;
+
+.active .ham8 .top {
+  stroke-dashoffset: -68px;
 }
-.ham8.active .middle {
-  //stroke-dashoffset: -20px;
-  transform: rotate(90deg);
-}
-.ham8.active .bottom {
-  stroke-dashoffset: -64px;
+
+.active .ham8 .bottom {
+  stroke-dashoffset: -68px;
 }

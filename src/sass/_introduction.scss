@@ -1,1 +1,16 @@
 @use "base";
+
+.intro {
+  width: 100%;
+  padding: 3.2rem 0;
+  &__heading {
+    grid-column: center-start / center-end;
+  }
+
+  &__text {
+    grid-column: center-start / center-end;
+    &:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
+  }
+}

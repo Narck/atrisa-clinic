@@ -2,7 +2,20 @@
 
 .section__hero {
   grid-column: full-start / full-end;
-  height: calc(100vh - 10rem);
-  transform: translateY(50%);
+  @media screen and (min-width: 22.5em) {
+    height: calc(100svh - 8rem);
+  }
+  margin-top: 8rem;
+  overflow: hidden;
+  //transform: translateY(50%);
+}
 
+.section-introduction {
+  grid-column: full-start / full-end;
+  background-image: linear-gradient(to bottom right, base.$color-secondary-light-40, base.$color-secondary-light-60);
+}
+
+.section-test {
+  grid-column: full-start / full-end;
+  background-color: base.$color-secondary-light-10;
 }

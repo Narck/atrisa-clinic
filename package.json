@@ -9,11 +9,20 @@
     "preview": "vite preview",
     "deploy": "npm run build && gh-pages -d dist"
   },
+  "homepage": "https://narck.github.io/atrisa-clinic",
   "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.23.7",
+    "@vitejs/plugin-legacy": "^5.2.0",
+    "gh-pages": "^6.1.1",
     "sass": "^1.69.5",
+    "terser": "^5.26.0",
     "vite": "^5.0.8"
   },
   "dependencies": {
-    "gsap": "^3.12.4"
+    "body-scroll-lock": "^4.0.0-beta.0",
+    "body-scroll-lock-upgrade": "^1.1.0",
+    "gsap": "^3.12.4",
+    "snapsvg": "^0.5.1",
+    "snapsvg-cjs": "^0.0.6"
   }
 }
