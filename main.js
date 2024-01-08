@@ -23,6 +23,7 @@ import { PixiPlugin } from "gsap/PixiPlugin";
 import { TextPlugin } from "gsap/TextPlugin";
 import { EasePack } from "gsap/EasePack";
 import * as Snap from "snapsvg-cjs";
+import { lock, unlock } from 'tua-body-scroll-lock'
 
 gsap.registerPlugin(TextPlugin, EasePack);
 const navBtn = document.querySelector(".header__nav-btn");
@@ -174,10 +175,11 @@ const machineGunText = function () {
       yPercent: "-100",
       duration: 1,
       ease: "power2.inOut",
+      // window.scrollTo(0, 1);
+      onStart: () => window.scrollTo(0, 1),
       onComplete: () => {
         document.querySelector(".loader").style.visibility = "hidden";
-        // window.scrollTo(0, 1);
-        enableBodyScroll(document.querySelector(".loader"))
+        unlock();
       }
     })
     .to(
@@ -213,7 +215,7 @@ const machineGunText = function () {
       ease: "sine.out",
     });
 };
-disableBodyScroll(document.querySelector(".loader"))
+lock();
 machineGunText();
 
 // preloaderTl.to(".heading-1 span", { duration: 1, text: "اعتماد بنفس" });
@@ -379,18 +381,42 @@ const toggleAnimations = function (
     xPercent: `${isActive ? (side ? 100 : -100) : 0}`,
     duration: 0.75,
     ease: "circ.inOut",
-    onStart: () => {
-      if (isActive) return;
-      document.body.classList.remove("fixed");
-      window.scrollTo(0, offset);
-      // document.documentElement.classList.remove("fixed");
-    },
-    onComplete: () => {
-      if (!isActive) return;
-      offset = window.scrollY;
-      document.body.classList.add("fixed");
+    // onStart: () => {
+    //   // console.log(isActive)
+    //   // if (!isActive && document.body.style.top) {
+    //     // gsap.set(".header", {"--bar-top": -document.body.style.top} )
+    //   // }
+    //   // document.body.classList.remove("fixed");
+    //   // window.scrollTo(0, offset);
+    //   // document.documentElement.classList.remove("fixed");
+    //   // else {
+    //   //     console.log("YES");
+    //   if (isActive) return;
+    //   lock(activeEl);
+    //   headerEl.style.backgroundColor = "transparent";
+      // }
+    // },
+    // onStart: () => {
+    //   if (isActive) return;
+    //   unlock(activeEl);
+    // },
+    // onComplete: () => {
+    //   if (!isActive) return;
+    //   lock(activeEl)
+      // console.log(activeEl.style.backgroundColor)
+      // console.log(document.body.top);
+      // if (isActive && document.body.style.top) {
+      //   gsap.set(".header", {"--bar-top": -document.body.style.top} )
+      // }
+      // offset = window.scrollY;
+      // document.body.classList.add("fixed");
       // document.documentElement.classList.add("fixed");
-    },
+      // else
+      // if (!isActive) return
+      // console.log(isActive)
+      // unlock(activeEl)
+      // headerEl.style.backgroundColor = "#ccf4f8";
+    // },
   });
 
   isActive &&
@@ -422,7 +448,7 @@ const toggle = function (notActiveEl, ev) {
   console.log(activeEl)
   if (activeEl.getBoundingClientRect().height > window.innerHeight)
     activeEl.style.overflowY = "scroll";
-
+  isActive ? lock(activeEl) : unlock(activeEl)
   isActive && (headerHeight = rootEl.style.getPropertyValue("--header-height"));
   headerEl.style.setProperty("--height", `${isActive ? "100vh" : "100%"}`);
 

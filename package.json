@@ -23,6 +23,7 @@
     "body-scroll-lock-upgrade": "^1.1.0",
     "gsap": "^3.12.4",
     "snapsvg": "^0.5.1",
-    "snapsvg-cjs": "^0.0.6"
+    "snapsvg-cjs": "^0.0.6",
+    "tua-body-scroll-lock": "^1.4.0"
   }
 }

@@ -5,6 +5,7 @@
   --height: 100%;
   --opacity: 0;
   --top: 0;
+  --bar-top: 0;
   background-color: transparent;
   --shadow-color: 0deg 0% 0%;
   grid-column: full-start / full-end;
@@ -20,7 +21,7 @@
   position: fixed;
   z-index: 10;
   width: 100vw;
-
+  top: 0;
   &.compact {
     &::before {
       box-shadow: var(--shadow-low);
@@ -74,8 +75,8 @@
       height: var(--height);
       position: absolute;
       right: 0;
-      top: 0;
-      transition: opacity 0.75s ease, height 0.75s ease;
+      top: var(--bar-top);
+      transition: opacity 0.75s ease, height 0.75s cubic-bezier(0.83, 0, 0.17, 1);;
       width: 100%;
       z-index: -2;
     }
@@ -91,8 +92,8 @@
       opacity: 0;
       position: absolute;
       right: 0;
-      top: 0;
-      transition: opacity 0.75s ease, height 0.75s ease;
+      top: var(--bar-top);
+      transition: opacity 0.75s ease, height 0.75s cubic-bezier(0.83, 0, 0.17, 1);;
       width: 100%;
       z-index: -1;
     }
@@ -142,7 +143,7 @@
       position: absolute;
       right: 0;
       top: 0;
-      transition: opacity 0.75s ease, height 0.75s ease;
+      transition: opacity 0.75s ease, height 0.75s cubic-bezier(0.83, 0, 0.17, 1);;
       width: 100%;
       z-index: -2;
       overflow-y: hidden;
@@ -161,7 +162,7 @@
       position: absolute;
       left: 0;
       top: 0;
-      transition: opacity 0.75s ease, height 0.75s ease;
+      transition: opacity 0.75s ease, height 0.75s cubic-bezier(0.83, 0, 0.17, 1);;
       width: 100%;
       z-index: -1;
       overflow-y: hidden;
