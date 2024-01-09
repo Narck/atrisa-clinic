@@ -190,22 +190,22 @@
   }
 
   &__picture {
-    align-self: center;
     backface-visibility: hidden;
     display: block;
-    grid-column: center-start / center-end;
-    height: var(--header-height);
-    justify-self: center;
     transform: translate3d(0, 0, 0);
   }
 
   &__logo {
+    justify-self: center;
+    align-self: center;
+    grid-column: center-start / center-end;
     backface-visibility: hidden;
-    display: block;
+    //display: block;
     height: 100%;
+    //height: var(--header-height);
     //height: 100%;
-    max-width: 100%;
-    padding: 0.5rem 0;
+    //max-width: 100%;
+    //padding: 0.5rem 0;
     transform: translate3d(0, 0, 0);
   }
 
