@@ -8,8 +8,8 @@
     <link href="./assets/favicon-32x32-G_43iODX.png" rel="icon" sizes="32x32" type="image/png" />
     <link href="./assets/favicon-16x16-qoKYAhsD.png" rel="icon" sizes="16x16" type="image/png" />
     <link href="./assets/site-cBxXiAWk.webmanifest" rel="manifest" />
-    <script type="module" crossorigin src="./assets/index-n9BopG2D.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-GWlO-oUE.css">
+    <script type="module" crossorigin src="./assets/index-FUCa8UiB.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-W8r7Mqjl.css">
   </head>
   <body>
     <div class="loader">
@@ -331,7 +331,7 @@
       <footer class="footer">
         <div class="container">
           <div class="footer__wrapper">
-            <div class="footer__col">
+            <div class="footer__col footer__col--first">
               <img alt="" class="footer__logo" src="./assets/logo-sDcxdlDD.png" />
               <p class="footer__desc">
                 کلینیک تخصصی کاشت مو و ابروی آتریسا یکی از بروزترین کلینیک‌های
@@ -340,23 +340,23 @@
                 صورت می‌گیرد. هدف ما همواره ارائه بهترین خدمان به زیباجویان
                 گرامی می‌باشد.
               </p>
-                <p class="footer__heading">
-                  ما را در شبکه‌های اجتماعی دنبال کنید
-                </p>
+              <p class="footer__sub-heading">
+                ما را در شبکه‌های اجتماعی دنبال کنید
+              </p>
               <ul class="footer__socials">
-                <li class="footer__item">
+                <li class="footer__item footer__item--socials">
                   <a
-                      class="footer__link"
-                      href="https://www.instagram.com/clinic.atrisa.shiraz?igsh=MWd2OGRybTZnODlx"
+                    class="footer__link"
+                    href="https://www.instagram.com/clinic.atrisa.shiraz?igsh=MWd2OGRybTZnODlx"
                   >
-                    <svg class="footer__icon">
+                    <svg class="footer__icon footer__icon--social">
                       <use xlink:href="./assets/sprite-3VRMNhWh.svg#icon-instagram"></use>
                     </svg>
                   </a>
                 </li>
-                <li class="footer__item">
+                <li class="footer__item footer__item--socials">
                   <a class="footer__link" href="tel:+987136483181">
-                    <svg class="footer__icon">
+                    <svg class="footer__icon footer__icon--social">
                       <use xlink:href="./assets/sprite-3VRMNhWh.svg#icon-telegram"></use>
                     </svg>
                   </a>
@@ -426,8 +426,10 @@
             <!--                            </li>-->
             <!--                          </ul>-->
             <!--                        </nav>-->
-            <nav class="footer-col footer-col--nav">
-              <h3 class="heading-4 footer__heading">خدمات کاشت</h3>
+            <nav class="footer__col footer__col--nav" data-number="0">
+              <h3 class="heading-4 footer__heading">
+                خدمات کاشت <span class="footer__expand-collapse"></span>
+              </h3>
               <ul class="footer__list">
                 <li class="footer__item">
                   <a class="footer__link" href="#">
@@ -459,8 +461,10 @@
                 </li>
               </ul>
             </nav>
-            <nav class="footer-col footer-col--nav">
-              <h3 class="heading-4 footer__heading">خدمات جوان‌سازی</h3>
+            <nav class="footer__col footer__col--nav" data-number="1">
+              <h3 class="heading-4 footer__heading">
+                خدمات جوان‌سازی<span class="footer__expand-collapse"></span>
+              </h3>
               <ul class="footer__list">
                 <li class="footer__item">
                   <a class="footer__link" href="#">
@@ -512,8 +516,10 @@
                 </li>
               </ul>
             </nav>
-            <nav class="footer-col footer-col--nav">
-              <h3 class="heading-4 footer__heading">خدمات پوست</h3>
+            <nav class="footer__col footer__col--nav" data-number="2">
+              <h3 class="heading-4 footer__heading">
+                خدمات پوست<span class="footer__expand-collapse"></span>
+              </h3>
               <ul class="footer__list">
                 <li class="footer__item">
                   <a class="footer__link" href="#">
@@ -555,8 +561,10 @@
                 </li>
               </ul>
             </nav>
-            <nav class="footer-col footer-col--nav">
-              <h3 class="heading-4 footer__heading">دسترسی سریع</h3>
+            <nav class="footer__col footer__col--nav" data-number="3">
+              <h3 class="heading-4 footer__heading">
+                دسترسی سریع<span class="footer__expand-collapse"></span>
+              </h3>
               <ul class="footer__list">
                 <li class="footer__item">
                   <a class="footer__link" href="#">
@@ -598,8 +606,10 @@
                 </li>
               </ul>
             </nav>
-            <nav class="footer-col footer-col--nav">
-              <h3 class="heading-4 footer__heading">راه‌های ارتباطی</h3>
+            <nav class="footer__col footer__col--nav" data-number="4">
+              <h3 class="heading-4 footer__heading">
+                راه‌های ارتباطی<span class="footer__expand-collapse"></span>
+              </h3>
               <ul class="footer__list">
                 <li class="footer__item">
                   <a class="footer__link" href="#">
@@ -656,15 +666,11 @@
                 </li>
               </ul>
             </nav>
-            <nav class="footer-col footer-col--nav">
-              <h3 class="heading-4 footer__heading">شبکه‌های اجتماعی</h3>
-
-            </nav>
 
             <div class="footer__col footer__col--copyright">
               <p class="copyright">
                 ©2023 تمام حقوق مادی و معنوی این وب‌سایت اعم از خدمات و محتوای
-                مربوط به آن متعلق به کلینیک می‌باشد.
+                مربوط به آن متعلق به کلینیک آتریسا می‌باشد.
               </p>
               <p class="developer">
                 طراحی و توسعه توسط <strong><a href="">یحیی کمانه</a></strong>
